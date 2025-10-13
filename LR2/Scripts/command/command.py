@@ -5,6 +5,9 @@ class Command():
 
         self._characters: list[Character] = []
 
+    def Tick_Team(self):
+        for char in self._characters:
+            char.life_cycle_tick()
     def AddClass(self, hero: Character):
         self._characters.append(hero)
     def GetLengthTeam(self):
@@ -45,3 +48,5 @@ class Command():
                 line_parts.append(line_part)
 
             print("".join(line_parts))
+    def is_life(self):
+        return any(char.is_life() for char in self._characters)
