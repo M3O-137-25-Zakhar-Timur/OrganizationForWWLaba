@@ -25,8 +25,6 @@ class Effect_Heal(Effect):
         self._duration -= 1
 
         return self if self._duration > 0 else Effect_Empty()
-
-
 class Effect_ManaExp(Effect):
     def __init__(self, duration):
         self._name = "MANA"
